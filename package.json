@@ -11,16 +11,16 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "framer-motion": "^10.0.0",        // Required for animations
-    "gh-pages": "^3.0.0",              // For deploying to GitHub Pages
-    "react": "^18.0.0",                // React core
-    "react-dom": "^18.0.0",            // React DOM for web app
-    "react-scripts": "^5.0.0"          // Scripts for building and running React app
+    "framer-motion": "^10.0.0",
+    "gh-pages": "^3.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "^5.0.0"
   },
   "devDependencies": {
-    "gh-pages": "^3.0.0"               // Also added in devDependencies
+    "gh-pages": "^3.0.0"
   },
-  "homepage": "https://djjones11.github.io/sugar",   // GitHub Pages URL, replace with your username
+  "homepage": "https://djjones11.github.io/sugar",
   "author": "djjones11",
   "license": "MIT",
   "browserslist": {
