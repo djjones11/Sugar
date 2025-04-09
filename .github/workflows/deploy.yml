@@ -7,7 +7,7 @@ on:
   pull_request:
     branches:
       - main  # Trigger on pull requests to the 'main' branch
-  workflow_dispatch:  # This allows you to trigger the workflow manually
+  workflow_dispatch:  # Allows manual triggering of the workflow
 
 jobs:
   build:
@@ -25,7 +25,7 @@ jobs:
 
       # Cache node_modules to speed up build times
       - name: Cache node modules
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: node_modules
           key: ${{ runner.os }}-node-modules-${{ hashFiles('**/package-lock.json') }}
@@ -46,4 +46,4 @@ jobs:
           npm install gh-pages --save-dev  # Install gh-pages if not already installed
           npm run deploy  # Run deploy script to push to gh-pages
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token to allow deployment to GitHub Pages
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # GitHub token to allow deployment to GitHub Pages 
