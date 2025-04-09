@@ -1,19 +1,38 @@
 {
-  "name": "Sugar",
+  "name": "sugar",
   "version": "1.0.0",
-  "dependencies": {
-    "react": "^18.0.0",
-    "react-dom": "^18.0.0",
-    "react-scripts": "^5.0.0"
-    "framer-motion": "^10.0.0"
-  },
+  "description": "A simple web app to visualize sugar content in cubes",
+  "main": "src/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "framer-motion": "^10.0.0",        // Required for animations
+    "gh-pages": "^3.0.0",              // For deploying to GitHub Pages
+    "react": "^18.0.0",                // React core
+    "react-dom": "^18.0.0",            // React DOM for web app
+    "react-scripts": "^5.0.0"          // Scripts for building and running React app
   },
   "devDependencies": {
-    "gh-pages": "^3.0.0"
+    "gh-pages": "^3.0.0"               // Also added in devDependencies
   },
-  "homepage": "https://djjones11.github.io/sugar"
+  "homepage": "https://djjones11.github.io/sugar",   // GitHub Pages URL, replace with your username
+  "author": "djjones11",
+  "license": "MIT",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
