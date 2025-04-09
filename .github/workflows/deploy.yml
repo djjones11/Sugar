@@ -12,6 +12,9 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Allow GitHub Actions to write to the repository contents
+
     steps:
       # Checkout the code
       - name: Checkout code
@@ -34,9 +37,10 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # Install dependencies
+      # Install dependencies if cache is not restored
       - name: Install dependencies
         run: npm install
+        if: steps.cache.outputs.cache-hit != 'true'  # Only install if cache is not hit
 
       # Cache build directory
       - name: Cache build directory
