@@ -1,3 +1,12 @@
+body {
+  background: linear-gradient(135deg, #f0f8ff, #d6eaff), url('https://www.toptal.com/designers/subtlepatterns/patterns/dot-grid.png');
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
 /* Basic sugar cube styling */
 .sugar-cube {
   background: linear-gradient(135deg, #fff, #e1e1e1); /* Sugar cube gradient */
@@ -105,4 +114,20 @@
 /* Custom cursor for sugar cubes */
 .sugar-cube {
   cursor: pointer; /* Change cursor to pointer */
+}
+
+.header {
+  padding: 20px;
+  background: linear-gradient(135deg, #e6f7ff, #f0f8ff);
+  border-bottom: 2px solid #d6eaff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.footer {
+  padding: 10px;
+  background: #f8f9fa;
+  border-top: 1px solid #e1e1e1;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
