@@ -1,33 +1,42 @@
-import React, { useState } from "react";
-import SugarCubeVisualizer from "./components/SugarCubeVisualizer";
+import React, { useState } from 'react';
+import SugarCubeVisualizer from './components/SugarCubeVisualizer';
 
-function App() {
-  const [sugarGrams, setSugarGrams] = useState("");
-  const grams = parseFloat(sugarGrams) || 0;
+const App = () => {
+  const [grams, setGrams] = useState(0);
+
+  const handleInputChange = (event) => {
+    setGrams(event.target.value); // Update grams with input value
+  };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-100 to-pink-300 flex flex-col items-center justify-center text-gray-800 px-4">
-      <div className="bg-white rounded-2xl shadow-xl p-8 max-w-md w-full text-center">
-        <h1 className="text-3xl font-bold mb-4">Sugar Cube Visualizer</h1>
-        <p className="mb-6 text-sm text-gray-500">1 sugar cube = ~4 grams</p>
+    <div className="container mx-auto p-4">
+      {/* Heading only once here */}
+      <h1 className="text-4xl font-semibold text-center text-green-600 mb-6">
+        Sugar Cube Visualizer
+      </h1>
 
+      {/* User Input Section */}
+      <div className="text-center mb-6">
+        <label
+          htmlFor="sugar-input"
+          className="block text-xl text-gray-700 mb-2"
+        >
+          Enter sugar in grams:
+        </label>
         <input
+          id="sugar-input"
           type="number"
-          min="0"
-          value={sugarGrams}
-          onChange={(e) => setSugarGrams(e.target.value)}
-          placeholder="Enter sugar in grams"
-          className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-pink-400"
+          value={grams}
+          onChange={handleInputChange}
+          placeholder="Enter grams of sugar"
+          className="border-2 border-gray-300 rounded-lg p-2 w-48 text-center"
         />
-
-        <p className="mt-4 font-medium">
-          That’s about <span className="text-pink-500">{Math.round(grams / 4)}</span> sugar cube(s)
-        </p>
       </div>
 
-      <SugarCubeVisualizer grams={grams} />
+      {/* Render the SugarCubeVisualizer with the grams value passed */}
+      {grams > 0 && <SugarCubeVisualizer grams={grams} />}
     </div>
   );
-}
+};
 
 export default App;

@@ -1,6 +1,30 @@
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f3f3f3;
+/* Basic sugar cube styling */
+.sugar-cube {
+  background: linear-gradient(135deg, #fff, #e1e1e1); /* Sugar cube gradient */
+  margin: 5px;
+  border-radius: 10px; /* Rounded edges */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  opacity: 1; /* Full opacity for whole cubes */
+  transition: transform 0.5s ease; /* Smooth transition for transformations */
+}
+
+/* Style for fractional cubes */
+.sugar-cube {
+  opacity: 0.8; /* Slight transparency for fractional cubes */
+}
+
+/* Animation for the cubes falling */
+@keyframes fall {
+  0% {
+    transform: translateY(-100px); /* Start from above */
+    opacity: 0; /* Start invisible */
+  }
+  100% {
+    transform: translateY(0); /* End at normal position */
+    opacity: 1; /* Full opacity */
+  }
+}
+
+.animate-cube-fall {
+  animation: fall 0.5s ease-out forwards; /* Apply falling animation */
 }
