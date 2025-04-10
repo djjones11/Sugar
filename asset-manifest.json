@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/Sugar/static/css/main.d2295f8b.css",
-    "main.js": "/Sugar/static/js/main.1e88f75c.js",
+    "main.css": "/Sugar/static/css/main.c9cfb85c.css",
+    "main.js": "/Sugar/static/js/main.04a3c437.js",
     "index.html": "/Sugar/index.html",
-    "main.d2295f8b.css.map": "/Sugar/static/css/main.d2295f8b.css.map",
-    "main.1e88f75c.js.map": "/Sugar/static/js/main.1e88f75c.js.map"
+    "main.c9cfb85c.css.map": "/Sugar/static/css/main.c9cfb85c.css.map",
+    "main.04a3c437.js.map": "/Sugar/static/js/main.04a3c437.js.map"
   },
   "entrypoints": [
-    "static/css/main.d2295f8b.css",
-    "static/js/main.1e88f75c.js"
+    "static/css/main.c9cfb85c.css",
+    "static/js/main.04a3c437.js"
   ]
 }
