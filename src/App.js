@@ -12,14 +12,14 @@ const App = () => {
     <div className="container mx-auto p-4">
       {/* Heading only once here */}
       <h1 className="text-4xl font-semibold text-center text-green-600 mb-6">
-        Sugar Cube Visualizer
+        How many sugar cubes are in my food?
       </h1>
 
       {/* User Input Section */}
       <div className="text-center mb-6">
         <label
           htmlFor="sugar-input"
-          className="block text-xl text-gray-700 mb-2"
+          className="block text-xl font-medium text-gray-700 mb-2"
         >
           Enter sugar in grams:
         </label>
@@ -29,7 +29,7 @@ const App = () => {
           value={grams}
           onChange={handleInputChange}
           placeholder="Enter grams of sugar"
-          className="border-2 border-gray-300 rounded-lg p-2 w-48 text-center"
+          className="border border-gray-300 rounded-full p-4 w-72 text-center shadow-md focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 transition duration-300 placeholder-gray-400"
         />
       </div>
 

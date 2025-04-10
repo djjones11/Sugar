@@ -12,27 +12,27 @@ const SugarCubeVisualizer = ({ grams }) => {
 
   // Add whole cubes
   for (let i = 0; i < wholeCubes; i++) {
-    sugarCubes.push(1); // Full cube
+    sugarCubes.push('full'); // Full cube
   }
 
   // Add fractional cube (if any)
   if (fractionalCube > 0) {
-    sugarCubes.push(fractionalCube); // Partial cube
+    if (fractionalCube <= 0.25) sugarCubes.push('fractional-25');
+    else if (fractionalCube <= 0.5) sugarCubes.push('fractional-50');
+    else if (fractionalCube <= 0.75) sugarCubes.push('fractional-75');
+    else sugarCubes.push('full');
   }
 
   return (
-    <div className="flex justify-center items-center">
+    <div className="visualization-area">
       {/* Render sugar cubes */}
       {sugarCubes.map((cube, index) => (
         <div
           key={index}
-          className="sugar-cube"
+          className={`sugar-cube ${cube !== 'full' ? cube : ''}`} // Add fractional class if not full
           style={{
-            width: cube === 1 ? '50px' : `${50 * cube}px`, // Adjust size for fractional cubes
-            height: '50px',
-            backgroundColor: cube === 1 ? 'green' : 'orange',
-            margin: '5px',
-            borderRadius: '5px',
+            width: '50px', // Fixed width for all cubes
+            height: '50px', // Fixed height for all cubes
           }}
         />
       ))}

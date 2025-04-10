@@ -3,28 +3,106 @@
   background: linear-gradient(135deg, #fff, #e1e1e1); /* Sugar cube gradient */
   margin: 5px;
   border-radius: 10px; /* Rounded edges */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 255, 255, 0.5); /* Soft shadow and glow */
   opacity: 1; /* Full opacity for whole cubes */
-  transition: transform 0.5s ease; /* Smooth transition for transformations */
+  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for transformations */
+}
+
+/* Hover effect for sugar cubes */
+.sugar-cube:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
 
 /* Style for fractional cubes */
-.sugar-cube {
+.sugar-cube.fractional {
+  background: linear-gradient(135deg, #f9f9f9, #dcdcdc); /* Lighter gradient */
   opacity: 0.8; /* Slight transparency for fractional cubes */
+}
+
+.sugar-cube.fractional-25 {
+  background: linear-gradient(to top, #fff 25%, #e1e1e1 25%); /* 25% filled */
+}
+
+.sugar-cube.fractional-50 {
+  background: linear-gradient(to top, #fff 50%, #e1e1e1 50%); /* 50% filled */
+}
+
+.sugar-cube.fractional-75 {
+  background: linear-gradient(to top, #fff 75%, #e1e1e1 75%); /* 75% filled */
 }
 
 /* Animation for the cubes falling */
 @keyframes fall {
   0% {
-    transform: translateY(-100px); /* Start from above */
+    transform: translateY(-100px) rotate(-15deg); /* Start above with rotation */
     opacity: 0; /* Start invisible */
   }
   100% {
-    transform: translateY(0); /* End at normal position */
+    transform: translateY(0) rotate(0); /* End at normal position */
     opacity: 1; /* Full opacity */
   }
 }
 
 .animate-cube-fall {
-  animation: fall 0.5s ease-out forwards; /* Apply falling animation */
+  animation: fall 0.5s ease-out forwards, shadow-grow 0.5s ease-out forwards; /* Falling and shadow animation */
+}
+
+/* Bounce animation for cubes */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px); /* Move up slightly */
+  }
+}
+
+.animate-cube-bounce {
+  animation: bounce 1s infinite; /* Continuous bounce */
+}
+
+/* Shadow animation for falling cubes */
+@keyframes shadow-grow {
+  0% {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  100% {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Visualization area styling */
+.visualization-area {
+  background: linear-gradient(135deg, #f0f8ff, #e6f7ff); /* Light blue gradient */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  display: flex; /* Use flexbox for horizontal stacking */
+  flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+  gap: 10px; /* Add spacing between cubes */
+  justify-content: center; /* Center the cubes horizontally */
+  align-items: center; /* Align cubes vertically in the container */
+}
+
+/* Stacking effect for cubes */
+.sugar-cube.stacked {
+  margin-top: 0; /* Remove vertical overlap for horizontal stacking */
+  transform: translateX(0); /* Reset horizontal offset */
+}
+
+/* Responsive design for sugar cubes */
+@media (max-width: 768px) {
+  .sugar-cube {
+    width: 30px;
+    height: 30px; /* Smaller cubes for smaller screens */
+  }
+  .visualization-area {
+    justify-content: flex-start; /* Align cubes to the left on smaller screens */
+  }
+}
+
+/* Custom cursor for sugar cubes */
+.sugar-cube {
+  cursor: pointer; /* Change cursor to pointer */
 }
