@@ -1,5 +1,5 @@
 import React from "react";
-import SugarCubeVisualizer from "./components/SugarCubeVisualizer";
+import SugarCubeVisualizer from "./src/components/SugarCubeVisualizer";
 
 function App() {
   return (
