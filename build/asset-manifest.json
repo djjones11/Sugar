@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sugar/static/css/main.7d34fb81.css",
+    "main.js": "/sugar/static/js/main.e786eb36.js",
+    "index.html": "/sugar/index.html",
+    "main.7d34fb81.css.map": "/sugar/static/css/main.7d34fb81.css.map",
+    "main.e786eb36.js.map": "/sugar/static/js/main.e786eb36.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d34fb81.css",
+    "static/js/main.e786eb36.js"
+  ]
+}
