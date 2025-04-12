@@ -5,7 +5,15 @@ const App = () => {
   const [grams, setGrams] = useState(0);
 
   const handleInputChange = (event) => {
-    setGrams(event.target.value); // Update grams with input value
+    let value = event.target.value;
+
+    // Remove leading zeros
+    value = value.replace(/^0+/, '');
+
+    // Cap the value at 100
+    value = Math.min(value || 0, 100); // Default to 0 if the input is empty
+
+    setGrams(value);
   };
 
   return (
@@ -19,7 +27,6 @@ const App = () => {
         </p>
       </header>
 
-      {/* Heading only once here */}
       <h1 className="text-4xl font-semibold text-center text-green-600 mb-6">
         How many sugar cubes are in my food?
       </h1>
@@ -27,9 +34,10 @@ const App = () => {
       {/* User Input Section */}
       <div className="text-center mb-6">
         <label
-          htmlFor="sugar-input"          className="block text-xl font-medium text-gray-700 mb-2"
+          htmlFor="sugar-input"
+          className="block text-xl font-medium text-gray-700 mb-2"
         >
-          Enter sugar in grams:
+          Enter sugar in grams (max 100g):
         </label>
         <input
           id="sugar-input"
@@ -38,15 +46,15 @@ const App = () => {
           onChange={handleInputChange}
           placeholder="Enter grams of sugar"
           className="border border-gray-300 rounded-full p-4 w-72 text-center shadow-md focus:outline-none focus:ring-4 focus:ring-indigo-300 focus:border-indigo-500 transition duration-300 placeholder-gray-400"
+          max="100" // Optional: Prevents entering values above 100
         />
       </div>
 
-      {/* Render the SugarCubeVisualizer with the grams value passed */}
       {grams > 0 && <SugarCubeVisualizer grams={grams} />}
 
       <footer className="footer">
         <p className="text-center text-sm text-gray-500">
-          © 2025 Sugar Cube Visualizer. All rights reserved.
+          © 2025 Sugar Cube Visualiser. All rights reserved.
         </p>
       </footer>
     </div>
