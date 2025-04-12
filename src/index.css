@@ -1,10 +1,21 @@
+:root {
+  --primary-color: #4CAF50; /* Green */
+  --secondary-color: #FFC107; /* Yellow */
+  --background-color: #F5F5F5; /* Light gray */
+  --text-color: #333; /* Neutral text */
+}
+
 body {
-  background: linear-gradient(135deg, #f0f8ff, #d6eaff), url('https://www.transparenttextures.com/patterns/cubes.png');
+  background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
   background-size: cover, auto; /* Cover for gradient, auto for pattern */
-  font-family: 'Roboto', sans-serif;
-  color: #333;
+  font-family: 'Poppins', sans-serif; /* Use a modern font */
+  line-height: 1.6; /* Improve readability */
+  color: var(--text-color);
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  background-color: var(--background-color);
 }
 
 /* Basic sugar cube styling */
@@ -14,13 +25,15 @@ body {
   border-radius: 10px; /* Rounded edges */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 10px rgba(255, 255, 255, 0.5); /* Soft shadow and glow */
   opacity: 1; /* Full opacity for whole cubes */
-  transition: transform 0.5s ease, box-shadow 0.5s ease; /* Smooth transition for transformations */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transformations */
+  user-select: none; /* Prevent text selection */
+  cursor: default; /* Default cursor to avoid pointer behavior */
 }
 
 /* Hover effect for sugar cubes */
 .sugar-cube:hover {
   transform: scale(1.1); /* Slightly enlarge on hover */
-  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
 }
 
 /* Style for fractional cubes */
@@ -109,11 +122,20 @@ body {
   .visualization-area {
     justify-content: flex-start; /* Align cubes to the left on smaller screens */
   }
-}
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-/* Custom cursor for sugar cubes */
-.sugar-cube {
-  cursor: pointer; /* Change cursor to pointer */
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .sugar-cube {
+    width: 30px;
+    height: 30px;
+  }
 }
 
 .header {
@@ -130,4 +152,91 @@ body {
   position: fixed;
   bottom: 0;
   width: 100%;
+  display: flex; /* Use flexbox */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+}
+
+h1, h2, h3 {
+  font-weight: 600; /* Bold headings */
+  color: #222; /* Darker color for headings */
+}
+
+.navbar {
+  background: var(--primary-color);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--secondary-color);
+}
+
+button {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: var(--secondary-color);
+}
+
+/* Add Font Awesome */
+<link
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  rel="stylesheet"
+/>
+
+footer .social-icons a {
+  color: var(--text-color);
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+footer .social-icons a:hover {
+  color: var(--primary-color);
+}
+
+<footer class="footer">
+  <p>© 2025 Sugar Cube Visualiser</p>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+  </div>
+</footer>
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
