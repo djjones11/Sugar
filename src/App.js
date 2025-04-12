@@ -16,11 +16,33 @@ const App = () => {
     setGrams(value);
   };
 
+  // Calculate the number of sugar cubes (assuming 1 cube = 4 grams)
+  const sugarCubes = grams / 4;
+
+  // Convert decimal part to fractions
+  const formatSugarCubes = (value) => {
+    const whole = Math.floor(value);
+    const decimal = value - whole;
+
+    let fraction = '';
+    if (decimal >= 0.75) {
+      fraction = 'three quarters';
+    } else if (decimal >= 0.5) {
+      fraction = 'half';
+    } else if (decimal >= 0.25) {
+      fraction = 'a quarter';
+    }
+
+    return `${whole > 0 ? whole : ''}${fraction ? ` and ${fraction}` : ''}`.trim();
+  };
+
+  const formattedSugarCubes = formatSugarCubes(sugarCubes);
+
   return (
     <div className="container mx-auto p-4">
       <header className="header">
         <h1 className="text-5xl font-bold text-center text-indigo-600 mb-4">
-          Sugar Cube Visualizer
+          Sugar Cube Visualiser
         </h1>
         <p className="text-center text-lg text-gray-600">
           Discover how much sugar is in your food, one cube at a time.
@@ -50,7 +72,14 @@ const App = () => {
         />
       </div>
 
-      {grams > 0 && <SugarCubeVisualizer grams={grams} />}
+      {grams > 0 && (
+        <>
+          <p className="text-center text-xl text-gray-700 mt-4">
+            That's {formattedSugarCubes} sugar cube{`${sugarCubes > 1 ? 's' : ''}`}!
+          </p>
+          <SugarCubeVisualizer grams={grams} />
+        </>
+      )}
 
       <footer className="footer">
         <p className="text-center text-sm text-gray-500">
