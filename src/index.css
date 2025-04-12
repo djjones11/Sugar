@@ -5,6 +5,12 @@
   --text-color: #333; /* Neutral text */
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
   background-size: cover, auto; /* Cover for gradient, auto for pattern */
@@ -13,7 +19,6 @@ body {
   color: var(--text-color);
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   overflow-x: hidden;
   background-color: var(--background-color);
 }
@@ -120,11 +125,12 @@ body {
     height: 30px; /* Smaller cubes for smaller screens */
   }
   .visualization-area {
-    justify-content: flex-start; /* Align cubes to the left on smaller screens */
+    justify-content: center; /* Center cubes on smaller screens */
+    flex-direction: column; /* Stack cubes vertically */
   }
   .navbar {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
   }
 
   .nav-links {
@@ -146,15 +152,16 @@ body {
 }
 
 .footer {
-  padding: 10px;
+  padding: 20px;
   background: #f8f9fa;
   border-top: 1px solid #e1e1e1;
   position: fixed;
   bottom: 0;
   width: 100%;
   display: flex; /* Use flexbox */
-  justify-content: center; /* Center content horizontally */
+  justify-content: space-between; /* Space out content */
   align-items: center; /* Center content vertically */
+  z-index: 10; /* Ensure it stays above other elements */
 }
 
 h1, h2, h3 {
