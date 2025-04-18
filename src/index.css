@@ -156,6 +156,21 @@ body {
     width: 50px; /* Adjust size for mobile */
     height: 50px;
   }
+
+  .visualization-area {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    flex-direction: row; /* Ensure horizontal layout */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 10px; /* Add spacing between cubes */
+    justify-content: flex-start; /* Align cubes to the left */
+  }
+
+  .sugar-cube {
+    flex: 0 0 auto; /* Prevent shrinking */
+    width: 50px; /* Adjust size for mobile */
+    height: 50px;
+  }
 }
 
 .header {
