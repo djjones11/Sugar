@@ -150,7 +150,8 @@ body {
     flex-direction: row; /* Ensure horizontal layout */
     overflow-x: hidden; /* Prevent horizontal scrolling */
     gap: 10px; /* Add spacing between cubes */
-    justify-content: flex-start; /* Align cubes to the left */
+    justify-content: center; /* Center cubes horizontally */
+    align-items: center; /* Center cubes vertically */
   }
 
 }
@@ -217,7 +218,6 @@ button {
 button:hover {
   background: var(--secondary-color);
 }
-
 
 .container {
   max-width: 1200px;
