@@ -152,16 +152,10 @@ body {
 }
 
 .footer {
-  padding: 20px;
-  background: #f8f9fa;
-  border-top: 1px solid #e1e1e1;
-  position: fixed;
-  bottom: 0;
   width: 100%;
-  display: flex; /* Use flexbox */
-  justify-content: space-between; /* Space out content */
-  align-items: center; /* Center content vertically */
-  z-index: 10; /* Ensure it stays above other elements */
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #f7fafc; /* Light gray background */
 }
 
 h1, h2, h3 {
@@ -213,16 +207,6 @@ button:hover {
   background: var(--secondary-color);
 }
 
-footer .social-icons a {
-  color: var(--text-color);
-  margin: 0 10px;
-  font-size: 20px;
-  transition: color 0.3s;
-}
-
-footer .social-icons a:hover {
-  color: var(--primary-color);
-}
 
 .container {
   max-width: 1200px;
