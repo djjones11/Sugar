@@ -1,8 +1,25 @@
 import React, { useState } from 'react';
 import SugarCubeVisualizer from './components/SugarCubeVisualizer';
+import FoodSelector from './components/FoodSelector';
 
 const App = () => {
   const [grams, setGrams] = useState(0);
+  const [selectedFoods, setSelectedFoods] = useState([]);
+  const [isClearing, setIsClearing] = useState(false);
+
+  const handleAddFood = (food) => {
+    setSelectedFoods((prevFoods) => [...prevFoods, food]);
+    setGrams((prevGrams) => prevGrams + food.sugar);
+  };
+
+  const handleDeselectAll = () => {
+    setIsClearing(true); // Trigger the animation
+    setTimeout(() => {
+      setSelectedFoods([]); // Clear the foods after animation
+      setGrams(0); // Reset grams
+      setIsClearing(false); // Reset animation state
+    }, 500); // Match the animation duration
+  };
 
   const handleInputChange = (event) => {
     let value = event.target.value;
@@ -47,6 +64,8 @@ const App = () => {
         </p>
       </header>
 
+      <FoodSelector onAddFood={handleAddFood} />
+
       <div className="row justify-content-center">
         <div className="col-md-6">
           {/* Input Section */}
@@ -65,6 +84,25 @@ const App = () => {
           </div>
         </div>
       </div>
+
+      {selectedFoods.length > 0 && (
+        <div className="mt-4">
+          <h3>Selected Foods/Drinks:</h3>
+          <ul className={`selected-foods ${isClearing ? 'clearing' : ''}`}>
+            {selectedFoods.map((food, index) => (
+              <li key={index}>
+                {food.icon} {food.name} ({food.sugar}g sugar)
+              </li>
+            ))}
+          </ul>
+          <button
+            className="btn btn-danger mt-3"
+            onClick={handleDeselectAll}
+          >
+            Deselect All
+          </button>
+        </div>
+      )}
 
       {grams > 0 && (
         <div className="text-center mt-4">

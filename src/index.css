@@ -227,3 +227,164 @@ button:hover {
   flex-direction: column;
   gap: 20px;
 }
+
+.food-selector {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.food-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.food-icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: transform 0.2s ease;
+}
+
+.food-icon-btn:hover {
+  transform: scale(1.2);
+}
+
+.food-icon {
+  display: inline-block;
+}
+
+.btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.selected-foods.clearing li {
+  animation: fadeOut 0.5s ease forwards;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.category-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.category-btn:hover {
+  background-color: var(--secondary-color);
+  transform: scale(1.1); /* Enlarge slightly on hover */
+}
+
+.category-btn.active {
+  background-color: var(--secondary-color);
+  font-weight: bold;
+  transform: scale(1.1); /* Keep the same size as hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for emphasis */
+}
+
+.category-btn.active::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #FFC107; /* Secondary color */
+  margin-top: 5px;
+  border-radius: 2px;
+}
+
+.food-category {
+  margin-top: 20px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.food-category h4 {
+  font-size: 1.5rem;
+  color: #4CAF50;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.food-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.food-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease; /* Smooth transition for scaling */
+}
+
+.food-item:hover {
+  transform: scale(1.1); /* Enlarge slightly on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow */
+}
+
+.food-name {
+  margin-top: 5px;
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form-control {
+  width: 100%;
+  max-width: 300px;
+  margin: 0 auto;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}

@@ -1,0 +1,33 @@
+{
+  "Fruits": [
+    { "name": "Apple (1 medium)", "sugar": 19, "icon": "🍎" },
+    { "name": "Banana (1 medium)", "sugar": 14, "icon": "🍌" },
+    { "name": "Strawberries (1 cup)", "sugar": 7, "icon": "🍓" },
+    { "name": "Orange (1 medium)", "sugar": 12, "icon": "🍊" },
+    { "name": "Grapes (1 cup)", "sugar": 23, "icon": "🍇" },
+    { "name": "Pineapple (1 cup)", "sugar": 16, "icon": "🍍" }
+  ],
+  "Drinks": [
+    { "name": "Coca-Cola (330ml)", "sugar": 35, "icon": "🥤" },
+    { "name": "Fanta (330ml)", "sugar": 32, "icon": "🥤" },
+    { "name": "Coffee (no sugar)", "sugar": 0, "icon": "☕" },
+    { "name": "Tea (no sugar)", "sugar": 0, "icon": "🍵" },
+    { "name": "Orange Juice (250ml)", "sugar": 21, "icon": "🍊" },
+    { "name": "Energy Drink (250ml)", "sugar": 27, "icon": "⚡" }
+  ],
+  "Snacks": [
+    { "name": "Chocolate Bar (50g)", "sugar": 25, "icon": "🍫" },
+    { "name": "Cookies (2 pieces)", "sugar": 16, "icon": "🍪" },
+    { "name": "Donut (1 medium)", "sugar": 15, "icon": "🍩" },
+    { "name": "Ice Cream (1 scoop)", "sugar": 14, "icon": "🍦" },
+    { "name": "Candy (5 pieces)", "sugar": 20, "icon": "🍬" },
+    { "name": "Popcorn (1 cup)", "sugar": 0, "icon": "🍿" }
+  ],
+  "Breakfast": [
+    { "name": "Pancakes (2 pieces)", "sugar": 12, "icon": "🥞" },
+    { "name": "Waffles (2 pieces)", "sugar": 15, "icon": "🧇" },
+    { "name": "Cereal (1 cup)", "sugar": 10, "icon": "🥣" },
+    { "name": "Toast with Jam (1 slice)", "sugar": 13, "icon": "🍞" },
+    { "name": "Smoothie (250ml)", "sugar": 20, "icon": "🥤" }
+  ]
+}
