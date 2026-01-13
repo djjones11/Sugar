@@ -11,7 +11,7 @@
     "eject": "react-scripts eject"
   },
   "dependencies": {
-    "bootstrap": "^5.3.5",
+    "bootstrap": "^5.3.8",
     "framer-motion": "^10.18.0",
     "gh-pages": "^3.0.0",
     "react": "^18.0.0",
